@@ -2,14 +2,6 @@ trigger: none
 
 pr: none
 
-schedule:
-- cron: '0 20 * * *'
-  displayName: 'coreclr-jitstress 8pm daily build'
-  branches:
-    include:
-    - master
-  always: true
-
 jobs:
 - template: /eng/platform-matrix.yml
   parameters:
