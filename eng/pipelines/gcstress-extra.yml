@@ -1,0 +1,19 @@
+trigger: none
+
+pr: none
+
+jobs:
+- template: /eng/platform-matrix.yml
+  parameters:
+    jobTemplate: build-job.yml
+    buildConfig: checked
+    platformGroup: gcstress
+
+- template: /eng/platform-matrix.yml
+  parameters:
+    jobTemplate: test-job.yml
+    buildConfig: checked
+    platformGroup: gcstress
+    helixQueueGroup: ci
+    jobParameters:
+      testGroup: gcstress-extra
